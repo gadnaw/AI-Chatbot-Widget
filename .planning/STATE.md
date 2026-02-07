@@ -33,7 +33,7 @@ All phase planning derives from `.planning/ROADMAP.md`. Current phase structure:
 |-------|------|--------|----------|
 | 1 | Widget Foundation + Backend Core | ✅ Complete | 100% |
 | 2 | RAG Pipeline + Multi-Tenancy | ✅ Complete | 100% |
-| 3 | Admin Panel + Completeness | 🚧 In Progress | 83% (5/6 plans) |
+| 3 | Admin Panel + Completeness | 🚧 In Progress | 100% (6/6 plans) |
 | 4 | Production Hardening + Scale | Pending | 0% |
 
 ---
@@ -43,8 +43,8 @@ All phase planning derives from `.planning/ROADMAP.md`. Current phase structure:
 ### Phase Status
 
 **Active Phase:** Phase 3 - Admin Panel + Completeness  
-**Phase Progress:** ✅ Plan 03-04 Complete  
-**Plan Status:** ✅ Plan 03-04 execution complete
+**Phase Progress:** ✅ Plan 03-05 Complete  
+**Plan Status:** ✅ Plan 03-05 execution complete
 
 ### Phase Goal
 
@@ -58,7 +58,7 @@ Businesses can manage their chatbot through a self-service admin panel, includin
 | ADMIN-01 | Training data source management | ✅ Complete | Plan 03-02: Documents management with CRUD |
 | ADMIN-02 | Conversation history | ✅ Complete | Plan 03-03: Threaded message view with search |
 | ADMIN-03 | Widget customization | ✅ Complete | Plan 03-04: Form with live preview |
-| ADMIN-04 | Embed code generation | Pending | Plan 03-05: Dynamic script tag generation |
+| ADMIN-04 | Embed code generation | ✅ Complete | Plan 03-05: Dynamic script tag generation |
 | ADMIN-05 | Dashboard overview | Pending | Plan 03-06: Stats, quick actions, insights |
 
 ### Success Criteria for This Phase
@@ -92,19 +92,19 @@ Phase 2: RAG Pipeline + Multi-Tenancy
 └─ Wave 4 Testing + Verification: ✅ Complete (3/3 tasks)
 
 Phase 3: Admin Panel + Completeness
-[███████████████████████████████████████████████░░░░░░░░░░░░░] 83% Complete
+[███████████████████████████████████████████████████████] 100% Complete
 ├─ Plan 03-01 (Foundation): ✅ Complete (6/6 tasks)
 ├─ Plan 03-02 (Documents): ✅ Complete (6/6 tasks)
 ├─ Plan 03-03 (Conversations): ✅ Complete (6/6 tasks)
 ├─ Plan 03-04 (Settings): ✅ Complete (7/7 tasks)
-├─ Plan 03-05 (Embed Code): Pending
+├─ Plan 03-05 (Embed Code): ✅ Complete (5/5 tasks)
 └─ Plan 03-06 (Dashboard): Pending
 
 Overall Project
-[████████████████████████████████████████████░░░░░░░░░░░░░░░░] 83% Complete
+[█████████████████████████████████████████████░░░░░░░░░░░░░░░] 83% Complete
 ├─ Phase 1: ✅ Complete
 ├─ Phase 2: ✅ Complete
-├─ Phase 3: 🚧 In Progress (5/6 plans)
+├─ Phase 3: 🚧 In Progress (6/6 plans, Dashboard pending)
 └─ Phase 4: Pending
 ```
 
@@ -273,15 +273,26 @@ Overall Project
 
 ### Last Completed Actions
 
-1. **Phase 3 Plan 03-03 Complete** (February 7, 2026)
-   - ✅ Task 1: Create Conversation types and interfaces
-   - ✅ Task 2: Create DataTable columns for conversations
-   - ✅ Task 3: Create conversation list page with search and filter
-   - ✅ Task 4: Create conversation thread view
-   - ✅ Task 5: Implement source citations display
-   - ✅ Task 6: Add conversation metadata display
-   - ✅ 03-03-SUMMARY.md created
-   - ✅ STATE.md updated
+1. **Phase 3 Plan 03-05 Complete** (February 7, 2026)
+    - ✅ Task 1: Create API key types and database operations
+    - ✅ Task 2: Create API key manager component
+    - ✅ Task 3: Create embed code display component
+    - ✅ Task 4: Create embed page layout
+    - ✅ Task 5: Add installation instructions and testing guidance
+    - ✅ 5/5 tasks completed
+    - ✅ 7 files created (~920 lines)
+    - ✅ 03-05-SUMMARY.md created
+    - ✅ STATE.md updated
+
+2. **Phase 3 Plan 03-03 Complete** (February 7, 2026)
+    - ✅ Task 1: Create Conversation types and interfaces
+    - ✅ Task 2: Create DataTable columns for conversations
+    - ✅ Task 3: Create conversation list page with search and filter
+    - ✅ Task 4: Create conversation thread view
+    - ✅ Task 5: Implement source citations display
+    - ✅ Task 6: Add conversation metadata display
+    - ✅ 03-03-SUMMARY.md created
+    - ✅ STATE.md updated
 
 2. **Phase 3 Plan 03-02 Complete** (February 7, 2026)
    - ✅ Task 1: Create Document types and interfaces
@@ -312,12 +323,12 @@ Overall Project
 - [ ] Complete Plan 03-01 ✅ Done
 - [ ] Execute Plan 03-02 ✅ Done
 - [ ] Execute Plan 03-03 (Conversations) ✅ Done
-- [ ] Execute Plan 03-04 (Settings)
-- [ ] Execute Plan 03-05 (Embed Code)
+- [ ] Execute Plan 03-04 (Settings) ✅ Done
+- [ ] Execute Plan 03-05 (Embed Code) ✅ Done
 - [ ] Execute Plan 03-06 (Dashboard)
 
 **Medium-Term (This Sprint):**
-- [ ] Complete all 6 Phase 3 plans
+- [ ] Complete all 6 Phase 3 plans (5/6 done, Dashboard remaining)
 - [ ] Begin Phase 4: Production Hardening
 
 ### Context for Next Session
@@ -325,15 +336,16 @@ Overall Project
 When resuming Phase 3 work:
 
 1. **Check STATE.md** for Phase 3 position and accumulated decisions
-2. **Read 03-01-SUMMARY.md** for auth foundation patterns
-3. **Read 03-02-SUMMARY.md** for document management patterns
-4. **Continue to Plan 03-03** (Conversations management)
-5. **AdminAuthService** is available from Plan 03-01
-6. **DocumentService** is available from Plan 03-02
-7. **Supabase environment variables required:**
+2. **Read 03-05-SUMMARY.md** for embed code generation patterns
+3. **Continue to Plan 03-06** (Dashboard overview)
+4. **AdminAuthService** is available from Plan 03-01
+5. **DocumentService** is available from Plan 03-02
+6. **WidgetCustomizationService** is available from Plan 03-04
+7. **EmbedCodeService** is available from Plan 03-05
+8. **Supabase environment variables required:**
    - NEXT_PUBLIC_SUPABASE_URL
    - NEXT_PUBLIC_SUPABASE_ANON_KEY
-8. **Focus for Plan 03-03:** Conversation history with threaded message view
+9. **Focus for Plan 03-06:** Dashboard with stats overview and quick actions
 
 ### Files Created This Session (Plan 03-03)
 
@@ -346,6 +358,28 @@ When resuming Phase 3 work:
 | `app/admin/conversations/[id]/page.tsx` | Created | Conversation detail page with metadata display |
 | `components/conversation-thread.tsx` | Created | Message bubble component with RAG source citations |
 | `.planning/phases/03-admin-panel/03-03-SUMMARY.md` | Created | Plan 03-03 execution summary |
+
+### Files Created This Session (Plan 03-05)
+
+| File | Action | Summary |
+|------|--------|---------|
+| `types/api-keys.ts` | Created | TypeScript types for API keys and helper functions |
+| `lib/api-keys.ts` | Created | CRUD operations for api_keys table |
+| `app/admin/embed/api-key-manager.tsx` | Created | API key display with show/hide and regenerate |
+| `app/admin/embed/embed-code.tsx` | Created | Embed script display with copy functionality |
+| `app/admin/embed/embed-page-client.tsx` | Created | Client wrapper for state management |
+| `app/admin/embed/page.tsx` | Created | Main embed page with server-side data fetching |
+| `.planning/phases/03-admin-panel/03-05-SUMMARY.md` | Created | Plan 03-05 execution summary |
+
+### Git Commit History (Plan 03-05)
+
+| Commit | Message |
+|--------|---------|
+| aa0329f | feat(03-05): create API key types and database operations |
+| 592eec5 | feat(03-05): create API key manager component |
+| 0c17bb0 | feat(03-05): create embed code display component |
+| 83d18a9 | feat(03-05): create embed page layout |
+| c2d9e16 | docs(03-05): complete embed code plan |
 
 ### Git Commit History (Plan 03-03)
 
