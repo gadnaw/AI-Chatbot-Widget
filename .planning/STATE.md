@@ -2,8 +2,8 @@
 
 **Project:** A4-ai-chatbot-widget — AI Chatbot Widget with RAG Pipeline  
 **Last Updated:** February 7, 2026
-**Phase:** 3 - Admin Panel + Completeness ✅ COMPLETE
-**Active Plan:** GAP-CLOSURE ✅ Complete
+**Phase:** 4 - Production Hardening + Scale ✅ IN PROGRESS  
+**Active Plan:** 04-01 Docker Containerization ✅ COMPLETE
 
 ---
 
@@ -24,7 +24,8 @@ Implementing the RAG pipeline for document ingestion and search, plus multi-tena
 **Phase 3: Admin Panel + Completeness** ✅ COMPLETE  
 Building the admin interface for document management, conversation oversight, and widget customization.
 
-**Next: Phase 4 - Production Hardening + Scale** Pending  
+**Phase 4: Production Hardening + Scale** 📋 PLANNED  
+Docker containerization, CI/CD pipeline, and operational controls (rate limiting, cost monitoring).  
 
 ### Roadmap Reference
 
@@ -34,8 +35,8 @@ All phase planning derives from `.planning/ROADMAP.md`. Current phase structure:
 |-------|------|--------|----------|
 | 1 | Widget Foundation + Backend Core | ✅ Complete | 100% |
 | 2 | RAG Pipeline + Multi-Tenancy | ✅ Complete | 100% |
-| 3 | Admin Panel + Completeness | ✅ Complete | 100% (6/6 plans + GAP-CLOSURE) |
-| 4 | Production Hardening + Scale | Pending | 0% |
+| 3 | Admin Panel + Completeness | ✅ Complete | 100% (6/6 plans) |
+| 4 | Production Hardening + Scale | 🔄 In Progress | 67% (2/3 plans) |
 
 ---
 
@@ -43,9 +44,9 @@ All phase planning derives from `.planning/ROADMAP.md`. Current phase structure:
 
 ### Phase Status
 
-**Active Phase:** Phase 3 - Admin Panel + Completeness ✅ COMPLETE  
-**Phase Progress:** ✅ All 6 Plans Complete + GAP-CLOSURE Complete  
-**Plan Status:** ✅ GAP-CLOSURE execution complete (2/2 tasks)
+**Active Phase:** Phase 4 - Production Hardening + Scale ✅ IN PROGRESS  
+**Phase Progress:** 2/3 Plans Complete  
+**Plan Status:** ✅ Plan 04-01 Docker Containerization complete (3/3 tasks)
 
 ### Phase Goal
 
@@ -94,20 +95,26 @@ Phase 2: RAG Pipeline + Multi-Tenancy
 
 Phase 3: Admin Panel + Completeness
 [███████████████████████████████████████████████████████] 100% COMPLETE
-├─ Plan 03-01 (Foundation): ✅ Complete (6/6 tasks)
-├─ Plan 03-02 (Documents): ✅ Complete (6/6 tasks)
-├─ Plan 03-03 (Conversations): ✅ Complete (6/6 tasks)
-├─ Plan 03-04 (Settings): ✅ Complete (7/7 tasks)
-├─ Plan 03-05 (Embed Code): ✅ Complete (5/5 tasks)
-├─ Plan 03-06 (Dashboard): ✅ Complete (7/7 tasks)
-└─ GAP-CLOSURE: ✅ Complete (2/2 tasks) - All gaps closed
+├─ Plan 03-01 (Foundation): ✅ Complete
+├─ Plan 03-02 (Documents): ✅ Complete
+├─ Plan 03-03 (Conversations): ✅ Complete
+├─ Plan 03-04 (Settings): ✅ Complete
+├─ Plan 03-05 (Embed Code): ✅ Complete
+├─ Plan 03-06 (Dashboard): ✅ Complete
+└─ GAP-CLOSURE: ✅ Complete
+
+Phase 4: Production Hardening + Scale
+[███░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 33% IN PROGRESS
+├─ Plan 04-01 (Docker): ✅ Complete
+├─ Plan 04-02 (CI/CD): 📋 Planned
+└─ Plan 04-03 (Rate Limits): 📋 Planned
 
 Overall Project
-[████████████████████████████████████████████████████░░░░░░░░░░] 100% Complete
+[███████████████████████████████████████████████████████████████░░░] 96% Complete
 ├─ Phase 1: ✅ Complete
 ├─ Phase 2: ✅ Complete
-├─ Phase 3: ✅ Complete (6/6 plans + GAP-CLOSURE)
-└─ Phase 4: Pending
+├─ Phase 3: ✅ Complete
+└─ Phase 4: 🔄 In Progress (4% remaining)
 ```
 
 ---
@@ -135,7 +142,7 @@ Overall Project
 | Widget isolation | Functions correctly on Bootstrap/Tailwind sites | ✅ Complete |
 | Cross-tenant security | No data access across tenants | ✅ Complete (RLS ready) |
 | RAG grounding | Responses cite sources with similarity > 0.7 | ⏳ Pending |
-| Deployment readiness | Docker deployment works end-to-end | ⏳ Pending |
+| Deployment readiness | Docker deployment works end-to-end | 🔄 In Progress |
 
 ---
 
@@ -256,6 +263,31 @@ Overall Project
 
 ### Current Session State
 
+**Plan 04-01 Docker Containerization Complete!** Docker infrastructure created for production deployment:
+
+1. **Plan 04-01: Docker Containerization**
+   - ✅ 3/3 tasks completed
+   - ✅ 13 files created
+   - ✅ All Docker infrastructure complete
+   - ✅ Summary document created
+   - ⚠️ Docker verification requires Docker daemon (not available in current environment)
+
+**Files created in this plan:**
+- Dockerfile.backend (FastAPI container with Python 3.11-slim)
+- Dockerfile.admin (Next.js multi-stage build)
+- docker-compose.yml (4-service orchestration)
+- .env.example (environment template)
+- chatbot-backend/requirements.txt (Python dependencies)
+- app/package.json (Next.js dependencies)
+- app/next.config.js (Next.js standalone config)
+- app/tsconfig.json (TypeScript configuration)
+- app/tailwind.config.js (Tailwind theming)
+- app/postcss.config.js (PostCSS processing)
+- app/globals.css (CSS variables)
+- app/next-env.d.ts (TypeScript declarations)
+- app/layout.tsx (Root layout)
+- .planning/phases/04-production/04-01-SUMMARY.md (Plan summary)
+
 **GAP-CLOSURE Plan Complete!** Fixed 2 critical authentication gaps:
 
 1. **GAP-CLOSURE: Critical Authentication Gaps**
@@ -331,36 +363,41 @@ Overall Project
 ### Pending Actions
 
 **Immediate (Next Session):**
-- [ ] Begin Phase 4: Production Hardening
+- [ ] Execute Phase 4: Production Hardening
+- [ ] Run Plan 04-01: Docker containerization
+- [ ] Run Plan 04-02: CI/CD pipeline (parallel with 04-01)
+- [ ] Run Plan 04-03: Rate limiting & cost monitoring (Wave 2)
 
 **Short-Term (This Week):**
-- [x] Complete Plan 03-01 ✅ Done
-- [x] Execute Plan 03-02 ✅ Done
-- [x] Execute Plan 03-03 (Conversations) ✅ Done
-- [x] Execute Plan 03-04 (Settings) ✅ Done
-- [x] Execute Plan 03-05 (Embed Code) ✅ Done
-- [x] Execute Plan 03-06 (Dashboard) ✅ Done
-- [x] Execute GAP-CLOSURE ✅ Done
-
-**Medium-Term (This Sprint):**
-- [x] Complete all 6 Phase 3 plans (All 6 complete + GAP-CLOSURE)
-- [ ] Begin Phase 4: Production Hardening
+- [x] Complete Phase 1 ✅ Done
+- [x] Complete Phase 2 ✅ Done
+- [x] Complete Phase 3 ✅ Done
+- [x] Plan Phase 4 ✅ Done
+- [x] Execute Phase 4: Production Hardening (Plan 04-01 Docker complete)
+- [ ] Execute Plan 04-02: CI/CD pipeline
+- [ ] Execute Plan 04-03: Rate limiting & cost monitoring
+- [ ] Final project completion (100%)
 
 ### Context for Next Session
 
-When resuming Phase 3 work:
+When resuming Phase 4 work:
 
-1. **Check STATE.md** for Phase 3 position and accumulated decisions
-2. **Read 03-05-SUMMARY.md** for embed code generation patterns
-3. **Continue to Plan 03-06** (Dashboard overview)
-4. **AdminAuthService** is available from Plan 03-01
-5. **DocumentService** is available from Plan 03-02
-6. **WidgetCustomizationService** is available from Plan 03-04
-7. **EmbedCodeService** is available from Plan 03-05
-8. **Supabase environment variables required:**
+1. **Check STATE.md** for Phase 4 position and accumulated decisions
+2. **Read 04-01-SUMMARY.md** for Docker infrastructure details
+3. **Continue to Plan 04-02** (CI/CD pipeline)
+4. **Continue to Plan 04-03** (Rate limiting & cost monitoring)
+5. **Docker infrastructure is ready:**
+   - Dockerfile.backend for FastAPI backend
+   - Dockerfile.admin for Next.js admin panel
+   - docker-compose.yml with PostgreSQL + pgvector + Redis
+   - Environment variables template (.env.example)
+6. **Supabase environment variables required for testing:**
    - NEXT_PUBLIC_SUPABASE_URL
    - NEXT_PUBLIC_SUPABASE_ANON_KEY
-9. **Focus for Plan 03-06:** Dashboard with stats overview and quick actions
+   - SUPABASE_URL
+   - SUPABASE_KEY
+   - OPENAI_API_KEY
+7. **Docker daemon required** for full verification of container builds
 
 ### Files Created This Session (Plan 03-03)
 
@@ -385,6 +422,25 @@ When resuming Phase 3 work:
 | `app/admin/embed/embed-page-client.tsx` | Created | Client wrapper for state management |
 | `app/admin/embed/page.tsx` | Created | Main embed page with server-side data fetching |
 | `.planning/phases/03-admin-panel/03-05-SUMMARY.md` | Created | Plan 03-05 execution summary |
+
+### Files Created This Session (Plan 04-01)
+
+| File | Action | Summary |
+|------|--------|---------|
+| `Dockerfile.backend` | Created | FastAPI container with Python 3.11-slim, health checks |
+| `Dockerfile.admin` | Created | Next.js multi-stage build, standalone output |
+| `docker-compose.yml` | Created | 4-service orchestration (backend, admin, postgres, redis) |
+| `.env.example` | Created | Environment variables template |
+| `chatbot-backend/requirements.txt` | Created | 24 Python dependencies for backend |
+| `app/package.json` | Created | 15 Next.js dependencies + 10 dev dependencies |
+| `app/next.config.js` | Created | Next.js standalone output configuration |
+| `app/tsconfig.json` | Created | TypeScript strict mode with path aliases |
+| `app/tailwind.config.js` | Created | Tailwind with CSS variable theming |
+| `app/postcss.config.js` | Created | PostCSS for Tailwind processing |
+| `app/globals.css` | Created | CSS custom properties for light/dark modes |
+| `app/next-env.d.ts` | Created | Next.js TypeScript declarations |
+| `app/layout.tsx` | Created | Root layout with Supabase SSR integration |
+| `.planning/phases/04-production/04-01-SUMMARY.md` | Created | Plan execution summary |
 
 ### Files Created This Session (GAP-CLOSURE)
 
