@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { 
@@ -28,6 +28,7 @@ interface WidgetFormProps {
   initialData: WidgetSettingsFormData
   tenantId: string
   onSaveSuccess?: () => void
+  onChange?: (values: WidgetSettingsFormData) => void
 }
 
 /**
@@ -37,7 +38,8 @@ interface WidgetFormProps {
 export function WidgetForm({ 
   initialData, 
   tenantId, 
-  onSaveSuccess 
+  onSaveSuccess,
+  onChange
 }: WidgetFormProps) {
   const [isSaving, setIsSaving] = useState(false)
 
@@ -53,6 +55,13 @@ export function WidgetForm({
   })
 
   const formValues = watch()
+
+  // Call onChange callback when form values change (for preview sync)
+  useEffect(() => {
+    if (onChange) {
+      onChange(formValues)
+    }
+  }, [formValues, onChange])
 
   const onSubmit = async (data: WidgetSettingsFormData) => {
     setIsSaving(true)

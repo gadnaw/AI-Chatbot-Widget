@@ -1,6 +1,6 @@
 import { redirect } from 'next/navigation'
 import { createServerSupabaseClient } from '@/lib/supabase/server'
-import { SidebarProvider } from '@/components/ui/sidebar'
+import { SidebarProvider } from '@/components/sidebar-provider'
 import { AppSidebar } from '@/components/app-sidebar'
 
 export default async function AdminLayout({

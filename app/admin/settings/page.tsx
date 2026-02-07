@@ -2,8 +2,7 @@ import { Suspense } from 'react'
 import { getTenantId } from '@/lib/admin-auth'
 import { initializeSettings, settingsToFormData } from '@/lib/widget-settings'
 import { WidgetSettingsFormData } from '@/types/widget-settings'
-import { WidgetForm } from './widget-form'
-import { WidgetPreview } from './widget-preview'
+import { SettingsFormWrapper } from './settings-form-wrapper'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card'
 import { Loader2 } from 'lucide-react'
 
@@ -64,38 +63,10 @@ export default async function WidgetSettingsPage() {
 
       {/* Settings Content */}
       <Suspense fallback={<SettingsLoadingSkeleton />}>
-        <div className="grid lg:grid-cols-2 gap-8">
-          
-          {/* Left Column: Form */}
-          <div className="space-y-6">
-            <Card>
-              <CardHeader>
-                <CardTitle>Appearance</CardTitle>
-                <CardDescription>
-                  Customize colors, position, and text for your widget
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <WidgetForm 
-                  initialData={initialData} 
-                  tenantId={tenantId}
-                />
-              </CardContent>
-            </Card>
-          </div>
-
-          {/* Right Column: Preview */}
-          <div className="lg:sticky lg:top-4 lg:self-start">
-            <WidgetPreview
-              primaryColor={initialData.primaryColor}
-              position={initialData.position}
-              welcomeMessage={initialData.welcomeMessage}
-              buttonText={initialData.buttonText}
-              headerTitle={initialData.headerTitle}
-            />
-          </div>
-
-        </div>
+        <SettingsFormWrapper
+          initialData={initialData}
+          tenantId={tenantId}
+        />
       </Suspense>
     </div>
   )
