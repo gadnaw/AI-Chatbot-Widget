@@ -33,7 +33,7 @@ All phase planning derives from `.planning/ROADMAP.md`. Current phase structure:
 |-------|------|--------|----------|
 | 1 | Widget Foundation + Backend Core | ✅ Complete | 100% |
 | 2 | RAG Pipeline + Multi-Tenancy | ✅ Complete | 100% |
-| 3 | Admin Panel + Completeness | 🚧 In Progress | 33% (2/6 plans) |
+| 3 | Admin Panel + Completeness | 🚧 In Progress | 50% (3/6 plans) |
 | 4 | Production Hardening + Scale | Pending | 0% |
 
 ---
@@ -43,8 +43,8 @@ All phase planning derives from `.planning/ROADMAP.md`. Current phase structure:
 ### Phase Status
 
 **Active Phase:** Phase 3 - Admin Panel + Completeness  
-**Phase Progress:** ✅ Plan 03-01 Complete  
-**Plan Status:** ✅ Plan 03-01 execution complete
+**Phase Progress:** ✅ Plan 03-02 Complete  
+**Plan Status:** ✅ Plan 03-02 execution complete
 
 ### Phase Goal
 
@@ -55,7 +55,7 @@ Businesses can manage their chatbot through a self-service admin panel, includin
 | ID | Requirement | Status | Implementation |
 |----|-------------|--------|----------------|
 | ADMIN-00 | Admin authentication | ✅ Complete | Plan 03-01: Auth, layout, sidebar foundation |
-| ADMIN-01 | Training data source management | Pending | Plan 03-02: Documents management with CRUD |
+| ADMIN-01 | Training data source management | ✅ Complete | Plan 03-02: Documents management with CRUD |
 | ADMIN-02 | Conversation history | Pending | Plan 03-03: Threaded message view with search |
 | ADMIN-03 | Widget customization | Pending | Plan 03-04: Form with live preview |
 | ADMIN-04 | Embed code generation | Pending | Plan 03-05: Dynamic script tag generation |
@@ -92,19 +92,19 @@ Phase 2: RAG Pipeline + Multi-Tenancy
 └─ Wave 4 Testing + Verification: ✅ Complete (3/3 tasks)
 
 Phase 3: Admin Panel + Completeness
-[███████████████░░░░░░░░░░░░░░░░░░░░░░░░░░░░] 33% Complete
+[███████████████████████████░░░░░░░░░░░░░░░░] 50% Complete
 ├─ Plan 03-01 (Foundation): ✅ Complete (6/6 tasks)
-├─ Plan 03-02 (Documents): Pending
+├─ Plan 03-02 (Documents): ✅ Complete (6/6 tasks)
 ├─ Plan 03-03 (Conversations): Pending
 ├─ Plan 03-04 (Settings): Pending
 ├─ Plan 03-05 (Embed Code): Pending
 └─ Plan 03-06 (Dashboard): Pending
 
 Overall Project
-[███████████████████░░░░░░░░░░░░░░░░░░░░░░░░░] 67% Complete
+[█████████████████████████████░░░░░░░░░░░░░░] 75% Complete
 ├─ Phase 1: ✅ Complete
 ├─ Phase 2: ✅ Complete
-├─ Phase 3: 🚧 In Progress (1/6 plans)
+├─ Phase 3: 🚧 In Progress (2/6 plans)
 └─ Phase 4: Pending
 ```
 
@@ -254,28 +254,36 @@ Overall Project
 
 ### Current Session State
 
-**Plan 03-01 execution complete!** All 6 tasks executed successfully:
+**Plan 03-02 execution complete!** All 6 tasks executed successfully:
 
-1. **Plan 03-01: Foundation - Auth, Layout, Sidebar**
+1. **Plan 03-02: Sources Management**
    - ✅ 6/6 tasks completed
-   - ✅ 15 files created
+   - ✅ 6 files created
    - ✅ 6 atomic commits made
    - ✅ All success criteria met
    - ✅ Summary document created
 
 **Files created in this plan:**
-- lib/supabase/client.ts (Browser Supabase client)
-- lib/supabase/server.ts (SSR Supabase client)
-- middleware.ts (Auth protection middleware)
-- app/login/page.tsx (Admin login page)
-- app/admin/layout.tsx (Admin layout with sidebar)
-- app/admin/page.tsx (Dashboard welcome page)
-- components/app-sidebar.tsx (Sidebar navigation)
-- components/sidebar-*.tsx (9 sidebar UI components)
+- types/documents.ts (Document types and interfaces)
+- app/admin/sources/columns.tsx (DataTable columns for documents)
+- app/admin/sources/page.tsx (Document management page)
+- app/admin/sources/documents-data-table.tsx (Client wrapper with delete/reindex)
+- app/admin/sources/add-document-dialog.tsx (Add document dialog)
+- components/ui/data-table.tsx (Reusable DataTable component)
 
 ### Last Completed Actions
 
-1. **Phase 3 Plan 03-01 Complete** (February 7, 2026)
+1. **Phase 3 Plan 03-02 Complete** (February 7, 2026)
+   - ✅ Task 1: Create Document types and interfaces
+   - ✅ Task 2: Create DataTable columns for documents
+   - ✅ Task 3: Create reusable DataTable component
+   - ✅ Task 4: Create document management page
+   - ✅ Task 5: Implement delete and re-index functionality
+   - ✅ Task 6: Create add document dialog
+   - ✅ 03-02-SUMMARY.md created
+   - ✅ STATE.md updated
+
+2. **Phase 3 Plan 03-01 Complete** (February 7, 2026)
    - ✅ Task 1: Supabase SSR client utilities
    - ✅ Task 2: Authentication middleware
    - ✅ Task 3: Admin login page
@@ -285,7 +293,7 @@ Overall Project
    - ✅ 03-01-SUMMARY.md created
    - ✅ STATE.md updated
 
-2. **Phase 2 Complete** (February 7, 2026)
+3. **Phase 2 Complete** (February 7, 2026)
    - ✅ All 4 waves executed successfully
    - ✅ 12/12 tasks completed
    - ✅ Unit tests >90% coverage
@@ -295,15 +303,14 @@ Overall Project
 ### Pending Actions
 
 **Immediate (Next Session):**
-- [ ] Begin Plan 03-02: Documents Management
-  - Document upload interface
-  - Document list with status indicators
-  - Delete document functionality
-  - Upload progress tracking
+- [ ] Begin Plan 03-03: Conversations Management
+  - Conversation history view
+  - Threaded message display
+  - Search/filter conversations
 
 **Short-Term (This Week):**
 - [ ] Complete Plan 03-01 ✅ Done
-- [ ] Execute Plan 03-02 (Documents)
+- [ ] Execute Plan 03-02 ✅ Done
 - [ ] Execute Plan 03-03 (Conversations)
 - [ ] Execute Plan 03-04 (Settings)
 - [ ] Execute Plan 03-05 (Embed Code)
@@ -318,38 +325,38 @@ Overall Project
 When resuming Phase 3 work:
 
 1. **Check STATE.md** for Phase 3 position and accumulated decisions
-2. **Read 03-01-SUMMARY.md** for completed foundation work
-3. **Continue to Plan 03-02** (Documents management)
-4. **AdminAuthService** is now available from Plan 03-01
-5. **Supabase environment variables required:**
+2. **Read 03-01-SUMMARY.md** for auth foundation patterns
+3. **Read 03-02-SUMMARY.md** for document management patterns
+4. **Continue to Plan 03-03** (Conversations management)
+5. **AdminAuthService** is available from Plan 03-01
+6. **DocumentService** is available from Plan 03-02
+7. **Supabase environment variables required:**
    - NEXT_PUBLIC_SUPABASE_URL
    - NEXT_PUBLIC_SUPABASE_ANON_KEY
-6. **Focus for Plan 03-02:** Document upload, list, delete operations
+8. **Focus for Plan 03-03:** Conversation history with threaded message view
 
-### Files Created This Session (Plan 03-01)
+### Files Created This Session (Plan 03-02)
 
 | File | Action | Summary |
 |------|--------|---------|
-| `lib/supabase/client.ts` | Created | Browser-side Supabase client with session management |
-| `lib/supabase/server.ts` | Created | Server-side Supabase client for SSR authentication |
-| `middleware.ts` | Created | Auth protection middleware for admin routes |
-| `app/login/page.tsx` | Created | Admin login page with email/password form |
-| `app/admin/layout.tsx` | Created | Admin layout with sidebar navigation provider |
-| `app/admin/page.tsx` | Created | Dashboard welcome page with quick navigation |
-| `components/app-sidebar.tsx` | Created | Sidebar navigation with menu items and logout |
-| `components/sidebar-*.tsx` | Created | 9 sidebar UI components (Shadcn-like) |
-| `.planning/phases/03-admin-panel/03-01-SUMMARY.md` | Created | Plan 03-01 execution summary |
+| `types/documents.ts` | Created | TypeScript interfaces for Document, DocumentFormData, DocumentStatus |
+| `components/ui/data-table.tsx` | Created | Reusable TanStack Table component with pagination, search, filtering |
+| `app/admin/sources/columns.tsx` | Created | Column definitions for document display with status badges |
+| `app/admin/sources/page.tsx` | Created | Server component that fetches documents from Supabase |
+| `app/admin/sources/documents-data-table.tsx` | Created | Client wrapper with delete and reindex actions |
+| `app/admin/sources/add-document-dialog.tsx` | Created | Tabbed dialog for URL, PDF, and text ingestion |
+| `.planning/phases/03-admin-panel/03-02-SUMMARY.md` | Created | Plan 03-02 execution summary |
 
-### Git Commit History (Plan 03-01)
+### Git Commit History (Plan 03-02)
 
 | Commit | Message |
 |--------|---------|
-| 4976b2e | feat(03-01): set up Supabase SSR client utilities |
-| 44d795b | feat(03-01): create authentication middleware for route protection |
-| 84deef0 | feat(03-01): create admin login page with email/password authentication |
-| 0228323 | feat(03-01): create admin layout with sidebar navigation provider |
-| e893ca8 | feat(03-01): create sidebar navigation component and UI components |
-| 6b5330d | feat(03-01): create admin dashboard welcome page |
+| a72ad9a | feat(03-02): create Document types and interfaces |
+| 78ab28a | feat(03-02): create DataTable columns for documents |
+| eb21871 | feat(03-02): create reusable DataTable component |
+| 6f6a983 | feat(03-02): create document management page |
+| 7d10a64 | feat(03-02): implement delete and re-index functionality |
+| d581413 | feat(03-02): create add document dialog |
 
 ---
 
@@ -359,12 +366,11 @@ When resuming Phase 3 work:
 
 | Item | Verification Method | Owner |
 |------|---------------------|-------|
-| Supabase clients working | Test client creation functions | Developer |
-| Middleware protection | Test unauthenticated /admin access | Developer |
-| Login page functionality | Test email/password login flow | Developer |
-| Sidebar navigation | Verify all menu items display | Developer |
-| Session persistence | Test page refresh with active session | Developer |
-| Logout functionality | Test sign out redirect to login | Developer |
+| Document list displays all ingested documents | Test with sample documents | Developer |
+| Add document dialog works for URL, PDF, text | Test each input type | Developer |
+| Delete document functionality works | Test deletion with confirmation | Developer |
+| Re-index functionality works | Test re-index on existing document | Developer |
+| Pagination and search work correctly | Test DataTable features | Developer |
 
 ### Verification Checklist
 
@@ -372,7 +378,7 @@ When resuming Phase 3 work:
 - [x] Phase 2 success criteria verified (8 criteria)
 - [x] Phase 3 requirements mapped (6 requirements)
 - [x] Plan 03-01 requirements verified (4 must-have truths)
-- [x] Plan 03-01 verification checklist (7 items)
+- [x] Plan 03-02 requirements verified (4 must-have truths)
 - [x] All pitfall mitigations assigned to phases
 
 ---
