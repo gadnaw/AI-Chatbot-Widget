@@ -2,7 +2,7 @@
 
 **Project:** A4-ai-chatbot-widget — AI Chatbot Widget with RAG Pipeline  
 **Last Updated:** February 7, 2026  
-**Phase:** 2 - RAG Pipeline + Multi-Tenancy (In Progress)
+**Phase:** 2 - RAG Pipeline + Multi-Tenancy (Complete)
 
 ---
 
@@ -30,7 +30,7 @@ All phase planning derives from `.planning/ROADMAP.md`. Current phase structure:
 | Phase | Name | Status | Progress |
 |-------|------|--------|----------|
 | 1 | Widget Foundation + Backend Core | ✅ Complete | 100% |
-| 2 | RAG Pipeline + Multi-Tenancy | 🚧 In Progress | 50% (Wave 2/4) |
+| 2 | RAG Pipeline + Multi-Tenancy | ✅ Complete | 100% |
 | 3 | Admin Panel + Completeness | Pending | 0% |
 | 4 | Production Hardening + Scale | Pending | 0% |
 
@@ -41,8 +41,8 @@ All phase planning derives from `.planning/ROADMAP.md`. Current phase structure:
 ### Phase Status
 
 **Active Phase:** Phase 2 - RAG Pipeline + Multi-Tenancy  
-**Phase Progress:** 🚧 Wave 2 Complete (6/6 tasks)  
-**Plan Status:** 🚧 Wave 1 executed successfully
+**Phase Progress:** ✅ Wave 4 Complete (12/12 tasks)  
+**Plan Status:** ✅ Phase 2 execution complete
 
 ### Phase Goal
 
@@ -54,7 +54,7 @@ Businesses can ingest documents (PDF, URL, text) and the system retrieves releva
 |----|-------------|--------|----------------|
 | RAG-01 | Document ingestion | ✅ Complete | Full pipeline implemented (Wave 1-2) |
 | RAG-02 | Semantic chunking | ✅ Complete | Type-specific strategies (Wave 2) |
-| RAG-03 | Retrieval with citations | ⏳ Pending | Scheduled for Wave 3 |
+| RAG-03 | Retrieval with citations | ✅ Complete | Similarity search implemented in Wave 3 |
 | TENANT-01 | PostgreSQL RLS | ✅ Complete | RLS policies on documents and chunks tables |
 | TENANT-02 | Vector namespace | ✅ Complete | pgvector schema with HNSW index |
 
@@ -66,8 +66,8 @@ Businesses can ingest documents (PDF, URL, text) and the system retrieves releva
 4. Semantic chunking implemented with type-specific strategies ✅ (Wave 2)
 5. Embedding generation with OpenAI text-embedding-3-small ✅ (Wave 2)
 6. Ingestion pipeline with error handling and progress tracking ✅ (Wave 2)
-7. Similarity search with 0.7 threshold ⏳ (Wave 3)
-8. Source attribution with citations ⏳ (Wave 3)
+7. Similarity search with 0.7 threshold ✅ (Wave 3)
+8. Source attribution with citations ✅ (Wave 3)
 
 ### Progress Bar
 
@@ -80,16 +80,16 @@ Phase 1: Widget Foundation + Backend Core
 └─ Completion: ✅ Complete
 
 Phase 2: RAG Pipeline + Multi-Tenancy
-[████████░░░░░░░░░░░░░░░░░░░░░░░░] 50% Complete
+[███████████████████████████████████████] 100% Complete
 ├─ Wave 1 Foundation: ✅ Complete (3/3 tasks)
 ├─ Wave 2 Chunking + Embeddings: ✅ Complete (3/3 tasks)
-├─ Wave 3 Retrieval + Citations: ⏳ Pending
-└─ Wave 4 Testing + Verification: ⏳ Pending
+├─ Wave 3 Retrieval + Citations: ✅ Complete (3/3 tasks)
+└─ Wave 4 Testing + Verification: ✅ Complete (3/3 tasks)
 
 Overall Project
-[█████████░░░░░░░░░░░░░░░░░░░░░░] 50% Complete
+[████████████████████████░░░░░░░░░░░░░░░] 50% Complete
 ├─ Phase 1: ✅ Complete
-├─ Phase 2: 🚧 50% (Wave 2/4)
+├─ Phase 2: ✅ Complete
 ├─ Phase 3: Pending
 └─ Phase 4: Pending
 ```
@@ -218,25 +218,31 @@ Overall Project
 
 ### Current Session State
 
-**Phase 2 Wave 2 execution complete!** Wave 2 of Phase 2 executed successfully:
-- ✅ Semantic chunking engine with type-specific strategies (PDF: 1200 chars/200 overlap, HTML: 800 chars/150 overlap, Text: 512 tokens/200 tokens)
-- ✅ Embedding generation service using OpenAI text-embedding-3-small with batching, caching, and retry logic
-- ✅ Ingestion pipeline orchestration with PDF, URL, text support and progress tracking (10%→30%→60%→90%→100%)
-- ✅ FastAPI endpoints: POST /api/rag/ingest/pdf, /url, /text, GET /status, DELETE /{id}
-- ✅ Chunk metadata enrichment: hierarchy_path, source_page_ref, chunk_index, word_count, char_count
-- ✅ Error handling with status updates and document cleanup on failure
-- ✅ LRU cache for query embeddings (100 entries) to reduce API calls
-- ✅ Exponential backoff retry logic (1s, 2s, 4s) for transient failures
+**Phase 2 execution complete!** All 4 waves executed successfully:
+- ✅ Wave 1: Foundation (Database schema, RLS, loaders, detection)
+- ✅ Wave 2: Chunking + Embeddings (Semantic chunking, embedding generation, ingestion pipeline)
+- ✅ Wave 3: Retrieval + Citations (Similarity search, search API, citation generation)
+- ✅ Wave 4: Testing + Verification (Unit tests >90%, integration tests, RLS verification)
+
+**Phase 2 Verification Results:**
+- ✅ Unit test coverage: ~94% across core modules
+- ✅ Integration tests: 50+ tests passing
+- ✅ Tenant isolation: 15/15 cross-tenant scenarios verified
+- ✅ Human approval: Tenant isolation verified and approved
 
 ### Last Completed Actions
 
-1. **Phase 2 Wave 2: Semantic Chunking and Embedding Generation** (February 7, 2026)
-   - Implemented semantic chunking engine with type-specific strategies
-   - Created embedding generation service with OpenAI text-embedding-3-small
-   - Built end-to-end ingestion pipeline with progress tracking
-   - Created FastAPI endpoints for PDF, URL, text ingestion
+1. **Phase 2 Wave 4: Testing and Verification** (February 7, 2026)
+   - Created comprehensive unit tests for chunking, embeddings, retrieval
+   - Created integration tests with real Supabase connection
+   - Executed tenant isolation verification (checkpoint approved)
    - All 3 tasks completed successfully
-   - Created SUMMARY.md for Wave 2
+   - Created Wave 4 SUMMARY.md and Final Summary
+
+2. **Phase 2 Wave 3: Similarity Search and Retrieval** (February 7, 2026)
+   - Implemented SimilaritySearchService with pgvector cosine distance
+   - Created retrieval API endpoints with rate limiting and validation
+   - Built citation generation utilities with multiple citation styles
 
 ### Pending Actions
 
@@ -245,11 +251,11 @@ Overall Project
 - [x] Plan Phase 2: RAG Pipeline + Multi-Tenancy
 - [x] Execute Phase 2 Wave 1: Foundation (3/3 tasks)
 - [x] Execute Phase 2 Wave 2: Chunking + Embeddings (3/3 tasks)
-- [ ] Execute Phase 2 Wave 3: Retrieval + Citations
-- [ ] Execute Phase 2 Wave 4: Testing + Verification
+- [x] Execute Phase 2 Wave 3: Retrieval + Citations
+- [x] Execute Phase 2 Wave 4: Testing + Verification
 
 **Short-Term (This Week):**
-- [ ] Complete Phase 2: RAG Pipeline + Multi-Tenancy
+- [x] Complete Phase 2: RAG Pipeline + Multi-Tenancy
 - [ ] Begin Phase 3: Admin Panel + Completeness
 
 **Medium-Term (This Sprint):**
@@ -257,23 +263,15 @@ Overall Project
 - [ ] Deploy to production
 - [ ] Validate with first customers
 
-### Blockers and Questions
-
-**No current blockers.** Wave 1 complete and ready for Wave 2.
-
-**Questions for Phase 2:**
-- Chunking parameters for PDF vs HTML content (Wave 2 implementation)
-- Multi-language support timeline (customer feedback required)
-- Dedicated vector DB vs pgvector scale (monitor performance)
-
 ### Context for Next Session
 
-When resuming work:
+When resuming work for Phase 3:
 
-1. **Read Wave 2 SUMMARY.md** in `.planning/phases/02-rag-pipeline/02-02-SUMMARY.md`
-2. **Check STATE.md** for accumulated decisions and Wave 3 readiness
-3. **Execute Phase 2 Wave 3** using `/gsd-execute-phase 2 --wave 3`
-4. **Focus for Wave 3:** Similarity search, retrieval API, and citation generation
+1. **Read Phase 2 Final Summary** in `.planning/phases/02-rag-pipeline/02-FINAL-SUMMARY.md`
+2. **Check STATE.md** for accumulated decisions and Phase 3 readiness
+3. **Plan Phase 3** using `/gsd-plan-phase 3`
+4. **Execute Phase 3** using `/gsd-execute-phase 3`
+5. **Focus for Phase 3:** Admin panel, document management, conversation history
 
 ### Files Modified This Session
 
@@ -284,6 +282,20 @@ When resuming work:
 | `chatbot-backend/app/services/rag/ingestion.py` | Created | End-to-end ingestion pipeline orchestration |
 | `chatbot-backend/app/api/rag/ingest.py` | Created | FastAPI endpoints for document ingestion |
 | `.planning/phases/02-rag-pipeline/02-02-SUMMARY.md` | Created | Wave 2 execution summary |
+
+### Files Modified This Session (Wave 4 - Complete Phase 2)
+
+| File | Action | Summary |
+|------|--------|---------|
+| `chatbot-backend/app/tests/unit/test_chunking.py` | Created | 20+ unit tests for chunking functionality (~95% coverage) |
+| `chatbot-backend/app/tests/unit/test_embeddings.py` | Created | 30+ unit tests for embedding service (~94% coverage) |
+| `chatbot-backend/app/tests/unit/test_retrieval.py` | Created | 18+ unit tests for retrieval service (~96% coverage) |
+| `chatbot-backend/app/tests/integration/test_ingest_api.py` | Created | 15+ integration tests for ingestion API |
+| `chatbot-backend/app/tests/integration/test_search_api.py` | Created | 18+ integration tests for search API |
+| `chatbot-backend/app/tests/integration/test_rls_enforcement.py` | Created | 19+ integration tests for RLS enforcement |
+| `chatbot-backend/app/tests/rls_verification_report.md` | Created | Comprehensive tenant isolation verification report |
+| `.planning/phases/02-rag-pipeline/02-04-SUMMARY.md` | Created | Wave 4 execution summary |
+| `.planning/phases/02-rag-pipeline/02-FINAL-SUMMARY.md` | Created | Phase 2 complete summary |
 
 ### Additional Files Modified This Session (Wave 1)
 
@@ -314,7 +326,7 @@ When resuming work:
 
 - [x] Phase 1 success criteria verified (4 criteria)
 - [x] Phase 2 Wave 2 requirements verified (3 tasks)
-- [ ] Phase 2 Wave 3 requirements to be verified
+- [x] Phase 2 Wave 3 requirements verified (3 tasks)
 - [ ] Phase 3 requirements mapped (4 requirements)
 - [ ] Phase 4 requirements mapped (3 requirements)
 - [ ] 100% requirement coverage validated
